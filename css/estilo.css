@@ -1,0 +1,16 @@
+.logo{
+	width:100;
+	height:100;
+}
+
+.btn-registos {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-registros:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
