@@ -28,3 +28,8 @@ body {
 	background-attachment: fixed;
 	background-size: cover;
 }
+
+.contenedor1 {
+	background-color: #fff;
+	color: #000;
+}
