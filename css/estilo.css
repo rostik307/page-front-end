@@ -14,3 +14,17 @@
   background-color: #0069d9;
   border-color: #0062cc;
 }
+
+body {
+  background-color: #fff;
+}
+
+	
+.cabecera {
+	color: white;
+	background-color: #3a5214;
+	background-image: url(../img/background.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
