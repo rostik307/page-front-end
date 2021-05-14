@@ -33,3 +33,8 @@ body {
 	background-color: #fff;
 	color: #000;
 }
+
+bloque1 {
+	min-height: 200px;
+	min-width: 500px;
+}
