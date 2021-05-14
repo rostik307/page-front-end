@@ -1,116 +1,37 @@
 <html>
-	<title>W3.CSS Template</title>
+	<title>Prestamos</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../css/temas.css">
 	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/temas.css">
 	<link rel="stylesheet" href="../css/w3.css">
-	<link rel="stylesheet" href="../css/estilo.css"> 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-	<body>
-	   
+	<link rel="stylesheet" href="../css/estilo.css">
+	<body class="cabecera">
 		<div class="w3-row-padding  w3-margin-top W3-center w3-auto W3-theme-white w3-display-middle  w3-card-4">
-
 			<div class="w3-center">
-				<div class=" w3-container " style="min-height:460px">
-					<h1 class="w3-xxxlarge w3-animate-left">LOGIN</h1> <br>
-					
+				<div class=" w3-container contenedor1 " style="min-height:720px">
+					<h1 class="w3-xxxlarge w3-animate-left">Pedir Prestamo</h1><br>
 					<img class="w3-margin-bottom w3-card w3-circle" src="../img/logo.png" alt="" width="200" height="200"/>
-					
-					<form class="w3-animate-right w3-large">
-					<input type="text" id="login" class="fadeIn second " name="login" placeholder="usuario">
-					<input type="text" id="password" class="fadeIn third " name="login" placeholder="contraseña">
-					<input type="submit" class="fadeIn fourth w3-card-4 " value="Conectarse" style="background-color:#b0db6b">
+
+					<form class="w3-animate-right w3-large "  action="comprobacion.php" method="POST">
+						<label for="articulo">Articulo</label><br>
+						<input type="text" id="articulo" class="fadeIn second " name="articulo" placeholder="Nombre de Articulo"><br><br>
+						
+						<label for="detalles">Detalles</label><br>
+						<input type="text" id="detalles" class="fadeIn third " name="detalles" placeholder="Detalles" style="height:70px; width:300px;"><br><br>
+						
+						<label for="h-prestamo">Hora en la que vas <br>
+						a tomar el artículo</label><br>
+						<input type="datetime-local" id="h-prestamo" name="h-prestamo" class="fadeIn third "><br><br>
+						
+						<label for="h-devolucion">Hora de la devolución</label><br>
+						<input type="datetime-local" id="h-devolucion" name="h-devolucion" class="fadeIn third "><br><br>
+
+						<input type="submit" class="fadeIn fourth w3-card-4 " value="Enviar Aviso" style="background-color:#b0db6b">
 					</form>
 					
-					<div id="formFooter" class="w3-margin-bottom">
-						<a class="underlineHover" href="#">Forgot Password?</a>
-					</div>
 				</div>
 			</div>
 		</div>
-
-		<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
-			<a href="menu.html" class="w3-bar-item w3-button">Menu</a>
-			<a href="paginas/login.html" class="w3-bar-item w3-button">Login</a>
-			<a href="paginas/prestamos.html" class="w3-bar-item w3-button">Prestamos</a>
-			<a href="paginas/registros.html" class="w3-bar-item w3-button">Registros</a>
-			<a href="paginas/inventario.html" class="w3-bar-item w3-button">Inventario</a> 
-			<button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-bars"></i></button>
-		</nav>
-
-		<script>
-			function w3_open() {
-				var x = document.getElementById("mySidebar");
-				x.style.width = "100%";
-				x.style.fontSize = "40px";
-				x.style.paddingTop = "10%";
-				x.style.display = "block";
-			}
-			function w3_close() {
-				document.getElementById("mySidebar").style.display = "none";
-			}
-
-			function openCity(evt, cityName) {
-				var i;
-				var x = document.getElementsByClassName("city");
-				for (i = 0; i < x.length; i++) {
-					x[i].style.display = "none";
-				}
-				var activebtn = document.getElementsByClassName("testbtn");
-				for (i = 0; i < x.length; i++) {
-					activebtn[i].className = activebtn[i].className.replace(" w3-dark-grey", "");
-				}
-				document.getElementById(cityName).style.display = "block";
-				evt.currentTarget.className += " w3-dark-grey";
-			}
-
-			var mybtn = document.getElementsByClassName("testbtn")[0];
-			mybtn.click();
-
-			function myAccFunc(id) {
-				var x = document.getElementById(id);
-				if (x.className.indexOf("w3-show") == -1) {
-					x.className += " w3-show";
-				} else { 
-					x.className = x.className.replace(" w3-show", "");
-				}
-			}
-
-			var slideIndex = 1;
-
-			function plusDivs(n) {
-				slideIndex = slideIndex + n;
-				showDivs(slideIndex);
-			}
-
-			function showDivs(n) {
-				var x = document.getElementsByClassName("mySlides");
-				if (n > x.length) {slideIndex = 1}    
-				if (n < 1) {slideIndex = x.length} ;
-				for (i = 0; i < x.length; i++) {
-					x[i].style.display = "none";
-				}
-				x[slideIndex-1].style.display = "block";  
-			}
-
-			showDivs(1);
-
-			function move() {
-				var elem = document.getElementById("myBar");   
-				var width = 5;
-				var id = setInterval(frame, 10);
-				function frame() {
-					if (width == 100) {
-						clearInterval(id);
-					} else {
-						width++; 
-						elem.style.width = width + '%'; 
-						elem.innerHTML = width * 1  + '%';
-					}
-				}
-			}
-		</script>
-   </body>
+	</body>
 </html>
