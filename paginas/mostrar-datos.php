@@ -15,17 +15,17 @@
 					
 					<?php
 
-					if (!$conect = mysqli_connect("localhost", "root", "Monitor?2", "almacenes")) {
+					if (!$conect = mysqli_connect("localhost", "Andres01", "Andre01", "almacenes")) {
 						
 						die("No se pudo crear la conexi&oacute al SGBD");
 					}
 					
-					$consulta = "SELECT * FROM autores";
+					$consulta = "SELECT nombre, cantidad, detalles FROM articulo";
 					$resultado = mysqli_query($conect, $consulta);
 					
 					if (!$resultado) {
 						
-						echo "<p>Error en la consulta.</p>";
+						echo "<p>Error en la consulta.</p>"
 						
 					} else {
 						
@@ -33,19 +33,20 @@
 						<table border=\"1\">
 							<thead>
 								<tr>
-									<th width=\"50\">IdAutores</th>
-									<th width=\"100\">Nombre</th>
-									<th width=\"100\">Apellidos</th>
-								<th width=\"50\">Pais</th>
+								
+									<th width=\"50\">nombre</th>
+									<th width=\"100\">cantidad</th>
+									<th width=\"100\">detalles</th>
+									
 								</tr>
-							</thead>"; 
+							</thead>";
+							
 						while ($valor = mysqli_fetch_array($resultado)) {
 							
 							echo "	<tr>\n
-									<td>$valor[autorid]</td>
 									<td>$valor[nombre]</td>
-									<td>$valor[apellidos]</td> 
-								<td>$valor[pais]</td>   
+									<td>$valor[cantidad]</td>
+									<td>$valor[detalles]</td> 
 							</tr>\n";
 						}
 						
