@@ -7,15 +7,17 @@
 	<link rel="stylesheet" href="../css/w3.css">
 	<link rel="stylesheet" href="../css/estilo.css">
 	<body class="cabecera">
-		<div class="w3-row-padding  w3-margin-top W3-center w3-auto W3-theme-white w3-card-4">
+		<div class="w3-row-padding  w3-margin-top W3-center w3-auto W3-theme-white">
 			<div class="w3-center">
-				<div class=" w3-container contenedor1 " style="min-width:100%">
+				<div class=" w3-container contenedor2 " style="min-width:100%">
 					<h1 class="w3-xxxlarge w3-animate-left">Inventario</h1>
 					<img class="w3-margin-bottom w3-card w3-circle" src="../img/logo.png" alt="logo" width="200" height="200"/><br>
 					
+					<div class="portatablas">
+
 					<?php
 
-					if (!$conect = mysqli_connect("localhost", "Andres01", "Andre01", "almacenes")) {
+					if (!$conect = mysqli_connect("localhost", "root", "", "almacenes")) {
 						
 						die("No se pudo crear la conexi&oacute al SGBD");
 					}
@@ -29,25 +31,25 @@
 						
 					} else {
 						
-						echo "<p>Listado completo de registros:</p>\n
-						<table border=\"1\">
+						echo "<p>Listado completo de articulos:</p>
+						
+						<table border='1'>
 							<thead>
 								<tr>
-								
-									<th width=\"50\">nombre</th>
-									<th width=\"100\">cantidad</th>
-									<th width=\"100\">detalles</th>
-									
+										<th width='120'>nombre</th>
+										<th width='30'>cantidad</th>
+										<th width='120'>detalles</th>
 								</tr>
 							</thead>";
 							
 						while ($valor = mysqli_fetch_array($resultado)) {
 							
-							echo "	<tr>\n
+							echo "
+								<tr>
 									<td>$valor[nombre]</td>
 									<td>$valor[cantidad]</td>
 									<td>$valor[detalles]</td> 
-							</tr>\n";
+								</tr>";
 						}
 						
 						echo "</table>\n";
@@ -58,6 +60,7 @@
 					
 					?>
 
+					</div>
 				</div>
 			</div>
 		</div>
