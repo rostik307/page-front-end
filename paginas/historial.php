@@ -23,38 +23,7 @@
 					$consulta = "SELECT nombre, cantidad, detalles FROM articulo";
 					$resultado = mysqli_query($conect, $consulta);
 					
-					if (!$resultado) {
-						
-						echo "<p>Error en la consulta.</p>"
-						
-					} else {
-						
-						echo "<p>Listado completo de registros:</p>\n
-						<table border=\"1\">
-							<thead>
-								<tr>
-								
-									<th width=\"50\">nombre</th>
-									<th width=\"100\">cantidad</th>
-									<th width=\"100\">detalles</th>
-									
-								</tr>
-							</thead>";
-							
-						while ($valor = mysqli_fetch_array($resultado)) {
-							
-							echo "	<tr>\n
-									<td>$valor[nombre]</td>
-									<td>$valor[cantidad]</td>
-									<td>$valor[detalles]</td> 
-							</tr>\n";
-						}
-						
-						echo "</table>\n";
-						
-					}
 					
-					mysqli_free_result($resultado);
 					
 					?>
 
