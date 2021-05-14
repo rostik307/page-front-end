@@ -25,7 +25,7 @@
 					
 					if (!$resultado) {
 						
-						echo "<p>Error en la consulta.</p>"
+						echo "<p>Error en la consulta.</p>";
 						
 					} else {
 						
