@@ -29,12 +29,24 @@ body {
 	background-size: cover;
 }
 
-.contenedor1 {
+.contenedor2, th, td {
 	background-color: #fff;
 	color: #000;
+	margin: 0 auto;
 }
+
+
+.contenedor1 {
+	background-color: #00;
+	color: #fff;
+}
+
 
 bloque1 {
 	min-height: 200px;
 	min-width: 500px;
+}
+
+portatablas {
+	margin: 0 auto;
 }
