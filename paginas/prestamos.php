@@ -1,3 +1,4 @@
+
 <html>
     <title>ALMACENES ALBERICIA</title>
     <meta charset="UTF-8">
@@ -31,7 +32,7 @@
 		
 		<a>
 			<div class="w3-half">
-				<div class="w3-card w3-container portatablas center" style="min-height:460px">
+				<div class="w3-card w3-container" style="min-height:460px">
 					<h3><b>Formulario</b></h3>
 					<br>
 					<b>
@@ -40,7 +41,7 @@
 						</p>
 					</b>
 					
-					<form class="w3-animate-right w3-large "  action="comprobacion.php" method="POST">
+					<form class="w3-animate-right w3-large "  action="hacerprestamos.php" method="POST">
 					
 						<label for="id_articulo">Indica el id del objeto que vas a tomar</label><br>
 						<input type="text" id="id_articulo" class="fadeIn second " name="id_articulo" placeholder="id del articulo"><br><br>
@@ -70,8 +71,15 @@
 					<h3><b>Objetos Disponibles</b></h3>
 					<br>
 					<b>
+					
+					<tr class="w3-bar">
+					<form class="w3-animate-right w3-large "  action="navegadorprestamos.php" method="POST">
+					<input type="button" id="almacen" class="w3-button w3-circle w3-black " name="almacen" value="AlmacenAF">
+
+					</tr>
+					</form>
 						<p>
-						<div id="" style="overflow-y:scroll; height:600px;">
+						
 						<?php
 						
 						if (!$conect = mysqli_connect("localhost", "root", "", "almacenes")) {
@@ -79,18 +87,8 @@
 						die("No se pudo crear la conexi&oacute al SGBD");
 						}
 						
-						$consulta = "SELECT
-										articulo.idArticulo,
-										articulo.nombre,
-										articulo.cantidad,
-										articulo.detalles
-									FROM
-										almacenes.almacen
-									JOIN
-										almacenes.articulo
-									WHERE
-										articulo.idAlmacen = 1
-									GROUP BY idArticulo";
+						$consulta = "SELECT `articulo`.`idArticulo`,articulo.nombre,articulo.cantidad,articulo.detalles, 
+						`almacen`.`lugar` FROM `articulo` LEFT JOIN `almacen` ON `articulo`.`idAlmacen` = `almacen`.`idAlmacen`";
 						$resultado = mysqli_query($conect, $consulta);
 						
 						if (!$resultado) {
@@ -100,16 +98,18 @@
 						} else {
 							
 							echo "<p>Listado completo de articulos:</p>
-									
-									<table border='1'>
-										<thead>
-											<tr>
-													<th width='30'>id Articulo</th>
-													<th width='120'>nombre</th>
-													<th width='30'>cantidad</th>
-													<th width='120'>detalles</th>
-											</tr>
-										</thead>";
+							
+							<table border='1'>
+								<thead>
+									<tr>
+											<th width='30'>id Articulo</th>
+											<th width='120'>nombre</th>
+											<th width='120'>Almacen</th>
+											<th width='30'>cantidad</th>
+											<th width='120'>detalles</th>
+											
+									</tr>
+								</thead>";
 								
 							while ($valor = mysqli_fetch_array($resultado)) {
 								
@@ -117,8 +117,10 @@
 									<tr>
 										<td>$valor[idArticulo]</td>
 										<td>$valor[nombre]</td>
+										<td>$valor[lugar]</td>
 										<td>$valor[cantidad]</td>
 										<td>$valor[detalles]</td>
+										
 									</tr>";
 							}
 							
