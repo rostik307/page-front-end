@@ -47,6 +47,33 @@ bloque1 {
 	min-width: 500px;
 }
 
-portatablas {
+.portatablas {
 	margin: 0 auto;
+	width: 99%;
+}
+
+.center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.itemconfiguration
+{
+	height:440px;
+	width:215px;
+	
+	overflow-y:auto;
+	float:left;
+	position:relative;
+	margin-left:-5px;
+}
+
+.left_contentlist{
+	width:215px;
+	float:left;
+	padding:0 0 0 5px;
+	position:relative;
+	float:left;
+	border-right: 1px #f8f7f3 solid;
 }
