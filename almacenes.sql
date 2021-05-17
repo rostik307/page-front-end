@@ -7,11 +7,6 @@
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
-drop database if exists Almacenes;
-create database Almacenes;
-
-use Almacenes;
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -31,6 +26,9 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `almacen`
 --
+drop database if exists almacenes;
+create database almacenes;
+use almacenes;
 
 CREATE TABLE `almacen` (
   `idAlmacen` int(11) NOT NULL,
@@ -536,7 +534,7 @@ INSERT INTO `profesores` (`idUsuario`, `departamento`) VALUES
 --
 
 CREATE TABLE `reserva` (
-  `idReserva` int(11) NOT NULL,
+  `idReserva` int(11) NOT NULL Primary key auto_increment,
   `idArticulo` int(11) NOT NULL,
   `idUsuario` varchar(50) NOT NULL,
   `cantidad` int(11) NOT NULL,
@@ -609,7 +607,6 @@ ALTER TABLE `profesores`
 -- Indices de la tabla `reserva`
 --
 ALTER TABLE `reserva`
-  ADD PRIMARY KEY (`idReserva`),
   ADD KEY `fkReservaArticulo` (`idArticulo`),
   ADD KEY `fkReservaUsuario` (`idUsuario`);
 
