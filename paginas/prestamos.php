@@ -31,7 +31,7 @@
 		
 		<a>
 			<div class="w3-half">
-				<div class="w3-card w3-container" style="min-height:460px">
+				<div class="w3-card w3-container portatablas center" style="min-height:460px">
 					<h3><b>Formulario</b></h3>
 					<br>
 					<b>
@@ -100,16 +100,16 @@
 						} else {
 							
 							echo "<p>Listado completo de articulos:</p>
-							
-							<table border='1'>
-								<thead>
-									<tr>
-											<th width='30'>id Articulo</th>
-											<th width='120'>nombre</th>
-											<th width='30'>cantidad</th>
-											<th width='120'>detalles</th>
-									</tr>
-								</thead>";
+									
+									<table border='1'>
+										<thead>
+											<tr>
+													<th width='30'>id Articulo</th>
+													<th width='120'>nombre</th>
+													<th width='30'>cantidad</th>
+													<th width='120'>detalles</th>
+											</tr>
+										</thead>";
 								
 							while ($valor = mysqli_fetch_array($resultado)) {
 								
