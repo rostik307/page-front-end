@@ -55,7 +55,7 @@ if(!isset($_SESSION["login"])){
 	  
     <div class="w3-row-padding w3-center w3-margin-top">
 	
-		<a href="paginas/prestamos.html">
+		<a href="paginas/prestamos.php">
 			<div class="w3-third">
 				<div class="w3-card w3-container" style="min-height:460px">
 					<h3><b>Préstamos</b></h3>
