@@ -13,7 +13,7 @@
 					<h1 class="w3-xxxlarge w3-animate-left">Inventario</h1>
 					<img class="w3-margin-bottom w3-card w3-circle" src="../img/logo.png" alt="logo" width="200" height="200"/><br>
 					
-					<div class="portatablas">
+					<div class="portatablas center">
 
 					<?php
 
