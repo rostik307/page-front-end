@@ -12,8 +12,53 @@
 				<div class=" w3-container contenedor2 " style="min-width:100%">
 					<h1 class="w3-xxxlarge w3-animate-left">Inventario</h1>
 					<img class="w3-margin-bottom w3-card w3-circle" src="../img/logo.png" alt="logo" width="200" height="200"/><br>
+	<form method="POST" action="mostrar-datos.php" onSubmit="return validarForm(this)">
+ 
+    <input type="text" placeholder="Buscar" id="palabra" name="palabra">
+ 
+    <input type="submit" value="Buscar" name="buscar">
+ 
+</form> 			<div class="portatablas">
 					
-					<div class="portatablas center">
+
+		 <table border='1' class="w3-card">
+		 <tr>	<th width='30'>Id</th>
+										<th width='120'>nombre</th>
+										<th width='30'>cantidad</th>
+										<th width='120'>detalles</th>
+								</tr>
+ <?php
+		if(isset($_POST['palabra'])) {
+					   $buscar = $_POST["palabra"];
+						$conect2 = mysqli_connect("localhost", "root", "", "almacenes");
+					   $consulta2= mysqli_query ($conect2,"SELECT * FROM articulo WHERE nombre like '%$buscar%' or detalles like '%$buscar%'");
+					   while($registro = mysqli_fetch_array($consulta2)) 
+		{
+           ?> 
+		  
+							
+								<tr>	<th width='30'></th>
+										<th width='120'></th>
+										<th width='30'></th>
+										<th width='120'></th>
+								</tr>
+							
+				<td class="estilo-tabla" align="center" width='30'><?=$registro['idArticulo']?></td>
+               <td class="estilo-tabla" align="center" width='150'><?=$registro['nombre']?></td>
+			    <td class="estilo-tabla" align="center" width='30'><?=$registro['cantidad']?></td>
+               <td class=”estilo-tabla” align="center" width=' fit-content'><?=$registro['detalles']?></td>
+			   
+           
+           <?php 
+       }
+		}
+    ?>
+    </table>
+    <?php
+
+?>
+					
+					
 
 					<?php
 
@@ -22,7 +67,7 @@
 						die("No se pudo crear la conexi&oacute al SGBD");
 					}
 					
-					$consulta = "SELECT nombre, cantidad, detalles FROM articulo";
+					$consulta = "SELECT * FROM articulo";
 					$resultado = mysqli_query($conect, $consulta);
 					
 					if (!$resultado) {
@@ -35,7 +80,7 @@
 						
 						<table border='1'>
 							<thead>
-								<tr>
+								<tr>	<th width='30'>idArticulo</th>
 										<th width='120'>nombre</th>
 										<th width='30'>cantidad</th>
 										<th width='120'>detalles</th>
@@ -46,6 +91,7 @@
 							
 							echo "
 								<tr>
+									<td>$valor[idArticulo]</td>
 									<td>$valor[nombre]</td>
 									<td>$valor[cantidad]</td>
 									<td>$valor[detalles]</td> 
@@ -59,7 +105,10 @@
 					mysqli_free_result($resultado);
 					
 					?>
+					
+ 
 
+					
 					</div>
 				</div>
 			</div>
