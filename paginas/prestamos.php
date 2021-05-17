@@ -71,7 +71,7 @@
 					<br>
 					<b>
 						<p>
-						
+						<div id="" style="overflow-y:scroll; height:600px;">
 						<?php
 						
 						if (!$conect = mysqli_connect("localhost", "root", "", "almacenes")) {
