@@ -1,16 +1,23 @@
-
+<?php
+session_start();
+if(!isset($_SESSION["login"])){
+	header("Location: paginas/login.html");
+}
+?>
 <html>
-    <title>ALMACENES ALBERICIA</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/temas.css">
-	<link rel="stylesheet" href="../css/bootstrap.css">
-	<link rel="stylesheet" href="../css/w3.css">
-	<link rel="stylesheet" href="../css/estilo.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+	<head>
+		<title>ALMACENES ALBERICIA</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../css/temas.css">
+		<link rel="stylesheet" href="../css/bootstrap.css">
+		<link rel="stylesheet" href="../css/w3.css">
+		<link rel="stylesheet" href="../css/estilo.css"> 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
 	<body>
-   
+   	<h1 class="fa fa-user w3-display-topright w3-xlarge w3-text-white"> Usuario: <?php echo $_SESSION['login']; ?></h1>
+
 		<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
 			<a href="../menu.html" class="w3-bar-item w3-button">Menu</a>
 			<a href="login.html" class="w3-bar-item w3-button">Login</a>
@@ -19,7 +26,6 @@
 			<a href="mostrar-datos.php" class="w3-bar-item w3-button">Inventario</a> 
 			<button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
 		</nav>
-	  
 		<header class="cabecera" id="myHeader">
 			<i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
 			<div class="w3-center">
@@ -53,10 +59,10 @@
 						<textarea rows="4" cols="20" name="detalles" id="detalles"></textarea><br><br>
 						
 						<label for="fecha_toma">Fecha de toma</label><br>
-						<input type="datetime-local" id="telefono" class="fadeIn second " name="telefono"><br><br>
+						<input type="datetime-local" id="ftoma" class="fadeIn second " name="ftoma"><br><br>
 						
 						<label for="fecha_vuelta">Fecha de vuelta</label><br>
-						<input type="datetime-local" id="direccion1" class="fadeIn second " name="direccion1"><br><br>
+						<input type="datetime-local" id="fvuelta" class="fadeIn second " name="fvuelta"><br><br>
 
 						<input type="submit" class="fadeIn fourth w3-card-4 " value="Enviar Aviso" style="background-color:#b0db6b"><br><br>
 					</form>
