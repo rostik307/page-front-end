@@ -35,7 +35,7 @@ if(!isset($_SESSION["login"])){
 				<h1 class="w3-xxxlarge w3-animate-bottom"><b>IES ALBERICIA</b></h1>
 				<h1 class="w3-xxxlarge w3-animate-bottom"><b>ALMACENES</b></h1>
 				<div class="w3-padding-64"/>
-						<h1 class="fa fa-user w3-display-topright w3-xlarge"> Usuario: <?php echo $_SESSION['login']; ?></h1>
+				<h1 class="fa fa-user w3-display-topright w3-xlarge"> Usuario: <?php echo $_SESSION['login']; ?></h1>
 			</div>
 		</header>
 	

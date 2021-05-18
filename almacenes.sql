@@ -536,6 +536,7 @@ CREATE TABLE `reserva` (
   `idReserva` int(11) NOT NULL Primary key auto_increment,
   `idArticulo` int(11) NOT NULL,
   `idUsuario` varchar(50) NOT NULL,
+  `detalles` varchar(100),
   `cantidad` int(11) NOT NULL,
   `fecha_recogida` datetime NOT NULL,
   `fecha_devolucion` datetime NOT NULL
@@ -552,7 +553,7 @@ CREATE TABLE `usuarios` (
   `idPerfil` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `apellidos` varchar(50) NOT NULL,
-  `telefono` varchar(50) NOT NULL,
+  `telefono` varchar(50),
   `contrasena` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

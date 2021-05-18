@@ -1,0 +1,92 @@
+.logo{
+	width:100;
+	height:100;
+}
+
+.btn-registos {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-registros:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+body {
+  background-color: #fff;
+}
+
+	
+.cabecera {
+	color: white;
+	background-color: #3a5214;
+	background-image: url(../img/background.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.contenedor2, th, td {
+	background-color: #fff;
+	color: #000;
+	margin: 0 auto;
+}
+
+
+.contenedor1 {
+	background-color: #fff;
+	color: #000;
+}
+
+
+bloque1 {
+	min-height: 200px;
+	min-width: 500px;
+}
+
+.portatablas {
+	margin: 0 auto;
+	width: 99%;
+}
+
+.center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.itemconfiguration
+{
+	height:440px;
+	width:215px;
+	
+	overflow-y:auto;
+	float:left;
+	position:relative;
+	margin-left:-5px;
+}
+
+.left_contentlist{
+	width:215px;
+	float:left;
+	padding:0 0 0 5px;
+	position:relative;
+	float:left;
+	border-right: 1px #f8f7f3 solid;
+}
+
+th{
+	background-color:#b0db6b;
+	text-transform: uppercase;
+	
+}
+td{
+	background-color:#e7f3ce;
+	
+}
+tbody td:nth-child(odd) {
+   background-color: #cce79d;
+}
