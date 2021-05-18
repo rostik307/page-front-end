@@ -24,7 +24,8 @@ if(!isset($_SESSION["login"])){
 			<a href="paginas/login.html" class="w3-bar-item w3-button">Login</a>
 			<a href="paginas/prestamos.php" class="w3-bar-item w3-button">Prestamos</a>
 			<a href="paginas/historial.php" class="w3-bar-item w3-button">Historial</a>
-			<a href="paginas/mostrar-datos.php" class="w3-bar-item w3-button">Inventario</a> 
+			<a href="paginas/mostrar-datos.php" class="w3-bar-item w3-button">Inventario</a>
+			<a href="paginas/logout.php" class="w3-bar-item w3-button">Cerrar Sesion</a>
 			<button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
 		</nav>
 	  
@@ -35,36 +36,9 @@ if(!isset($_SESSION["login"])){
 				<h1 class="w3-xxxlarge w3-animate-bottom"><b>IES ALBERICIA</b></h1>
 				<h1 class="w3-xxxlarge w3-animate-bottom"><b>ALMACENES</b></h1>
 				<div class="w3-padding-64"/>
-				<h1 class="fa fa-user w3-display-topright w3-xlarge"> Usuario: <?php echo $_SESSION['login']; ?></h1>
+				<h1 class="fa fa-user w3-display-topright w3-xlarge"> Usuario: <?php echo $_SESSION['nombre']; ?></h1>
 			</div>
-		</header>
-	
-	<div id="id01" class="w3-modal">
-		<div class="w3-modal-content w3-card-4 w3-animate-top">
-		
-			<header class="w3-container w3-theme-l1">
-				<span onclick="document.getElementById('id01').style.display='none'"
-					class="w3-button w3-display-topright">×</span>
-				<h4>Conectarse</h4>
-
-				</h4>
-			</header>	
-			
-		</div>
-	</div>
-	  
-    <div id="id01" class="w3-modal">
-			<div class="w3-modal-content w3-card-4 w3-animate-top">
-			
-				<header class="w3-container w3-theme-l1">
-					<span onclick="document.getElementById('id01').style.display='none'"
-						class="w3-button w3-display-topright">×</span>
-					<h4>Conectarse</h4>
-				</header>	
-				
-			</div>
-		</div>
-	  
+		</header>	  
 		<div class="w3-row-padding w3-center w3-margin-top">
 	
 			<a href="paginas/prestamos.php">
@@ -123,7 +97,7 @@ if(!isset($_SESSION["login"])){
 		<script>
 			function w3_open() {
 				var x = document.getElementById("mySidebar");
-				x.style.width = "100%";
+				x.style.width = "700px";
 				x.style.fontSize = "40px";
 				x.style.paddingTop = "10%";
 				x.style.display = "block";

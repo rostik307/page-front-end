@@ -64,7 +64,7 @@ if(!isset($_SESSION["login"])){
 						<label for="fecha_vuelta">Fecha de vuelta</label><br>
 						<input type="datetime-local" id="fvuelta" class="fadeIn second " name="fvuelta"><br><br>
 
-						<input type="submit" class="fadeIn fourth w3-card-4 " value="Enviar Aviso" style="background-color:#b0db6b"><br><br>
+						<input type="submit" class="fadeIn fourth w3-card-4 " value="Prestar" style="background-color:#b0db6b" onclick="alerta"><br><br>
 					</form>
 					
 				</div>
@@ -145,16 +145,10 @@ if(!isset($_SESSION["login"])){
 				</div>
 			</div>
 		</a>
-		
-
-		
-		
-	  
-
 		<script>
 			function w3_open() {
 				var x = document.getElementById("mySidebar");
-				x.style.width = "400px";
+				x.style.width = "700px";
 				x.style.fontSize = "40px";
 				x.style.paddingTop = "10%";
 				x.style.display = "block";
@@ -223,6 +217,18 @@ if(!isset($_SESSION["login"])){
 					}
 				}
 			}
+			function alerta()
+				{
+				var mensaje;
+				var opcion = confirm("Clicka en Aceptar o Cancelar");
+				if (opcion == true) {
+					mensaje = "Has clickado OK";
+				} else {
+					mensaje = "Has clickado Cancelar";
+				}
+				document.getElementById("ejemplo").innerHTML = mensaje;
+			}
+			
 		</script>
    </body>
 </html>
