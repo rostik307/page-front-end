@@ -77,3 +77,16 @@ bloque1 {
 	float:left;
 	border-right: 1px #f8f7f3 solid;
 }
+
+th{
+	background-color:#b0db6b;
+	text-transform: uppercase;
+	
+}
+td{
+	background-color:#e7f3ce;
+	
+}
+tbody td:nth-child(odd) {
+   background-color: #cce79d;
+}

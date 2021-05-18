@@ -80,7 +80,7 @@ if(!isset($_SESSION["login"])){
 					
 					<tr class="w3-bar">
 					<form class="w3-animate-right w3-large "  action="navegadorprestamos.php" method="POST">
-					<input type="button" id="almacen" class="w3-button w3-circle w3-black " name="almacen" value="AlmacenAF">
+					<input type="button" id="almacen" class="w3-button w3-square w3-black " name="almacen" value="AlmacenAF">
 
 					</tr>
 					</form>
