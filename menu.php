@@ -1,20 +1,22 @@
 <?php
 session_start();
-$login=$_SESSION["login"];
 if(!isset($_SESSION["login"])){
 	header("Location: paginas/login.html");
 }
 ?>
 <!DOCTYPE html>
 <html>
-    <title>ALMACENES ALBERICIA</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/temas.css">
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/w3.css">
-	<link rel="stylesheet" href="css/estilo.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<head>
+		<title>ALMACENES ALBERICIA</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/temas.css">
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/w3.css">
+		<link rel="stylesheet" href="css/estilo.css"> 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	
     <body>
 
 		<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
@@ -24,6 +26,9 @@ if(!isset($_SESSION["login"])){
 			<a href="paginas/historial/historial.php" class="w3-bar-item w3-button">Historial</a>
 			<a href="paginas/mostrar-datos.php" class="w3-bar-item w3-button">Inventario</a>
 			<a href="paginas/logout.php" class="w3-bar-item w3-button">Log out</a> 
+			<a href="paginas/historial.php" class="w3-bar-item w3-button">Historial</a>
+			<a href="paginas/mostrar-datos.php" class="w3-bar-item w3-button">Inventario</a>
+			<a href="paginas/logout.php" class="w3-bar-item w3-button">Cerrar Sesion</a>
 			<button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
 		</nav>
 	  
@@ -34,10 +39,12 @@ if(!isset($_SESSION["login"])){
 				<h1 class="w3-xxxlarge w3-animate-bottom"><b>IES ALBERICIA</b></h1>
 				<h1 class="w3-xxxlarge w3-animate-bottom"><b>ALMACENES</b></h1>
 				<div class="w3-padding-64"/>
+				<h1 class="fa fa-user w3-display-topright w3-xlarge"> Usuario: <?php echo $_SESSION['nombre']; ?></h1>
 			</div>
 		</header>
 		
 	  
+		</header>	  
 		<div class="w3-row-padding w3-center w3-margin-top">
 
 			<a href="paginas/prestamos.php">
