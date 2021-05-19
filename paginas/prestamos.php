@@ -14,9 +14,33 @@ if(!isset($_SESSION["login"])){
 		<link rel="stylesheet" href="../css/w3.css">
 		<link rel="stylesheet" href="../css/estilo.css"> 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
+		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('#btn1').on('click', function(){
+					$.ajax({
+						type: "POST",
+						url: "hola.php",
+						success: function(response) {
+							$('#div-results').html(response);
+						}
+					});
+				});
+			 
+				$('#btn2').on('click', function(){
+					$.ajax({
+						type: "POST",
+						url: "salida.php",
+						success: function(response) {
+							$('#div-results').html(response);
+						}
+					});
+				});
+			});
+		</script>
+	</head>
 	<body>
-   	<h1 class="fa fa-user w3-display-topright w3-xlarge w3-text-white"> Usuario: <?php echo $_SESSION['login']; ?></h1>
+   	<h1 class="fa fa-user w3-display-topright w3-xlarge w3-text-white"> Usuario: <?php echo $_SESSION['nombre']; ?></h1>
 
 		<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
 			<a href="../menu.html" class="w3-bar-item w3-button">Menu</a>
@@ -77,12 +101,9 @@ if(!isset($_SESSION["login"])){
 					<h3><b>Objetos Disponibles</b></h3>
 					<br>
 					<b>
-					
-					<tr class="w3-bar">
-					<form class="w3-animate-right w3-large "  action="navegadorprestamos.php" method="POST">
-					<input type="button" id="almacen" class="w3-button w3-square w3-black " name="almacen" value="AlmacenAF">
-
-					</tr>
+						<a class="btn btn-success" id="btn1">Ver el archivo que contiene hola</a> 
+						<a class="btn btn-danger" id="btn2">Ver el archivo que contiene adios</a>
+						<div id="div-results"></div>
 					</form>
 						<p>
 						
