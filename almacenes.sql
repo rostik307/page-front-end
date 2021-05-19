@@ -31,7 +31,7 @@ create database almacenes;
 use almacenes;
 
 CREATE TABLE `almacen` (
-  `idAlmacen` int(11) NOT NULL,
+  `idAlmacen` int NOT NULL auto_increment primary key,
   `lugar` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -570,11 +570,6 @@ INSERT INTO `usuarios` (`idUsuario`, `idPerfil`, `nombre`, `apellidos`, `telefon
 -- Índices para tablas volcadas
 --
 
---
--- Indices de la tabla `almacen`
---
-ALTER TABLE `almacen`
-  ADD PRIMARY KEY (`idAlmacen`);
 
 --
 -- Indices de la tabla `articulo`
