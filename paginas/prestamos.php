@@ -82,11 +82,6 @@ if(!isset($_SESSION["login"])){
 					
 					<form class="w3-animate-right w3-large "  action="navegadorprestamos.php" method="POST">
 					<input type="button" id="almacen" class="w3-button w3-square w3-black " name="almacen" value="AlmacenAF">
-<<<<<<< HEAD
-					
-=======
-
->>>>>>> c7bbcb671f1cc4fd3519cd278046684c51d8e428
 					</tr>
 					</form>
 						<p>
