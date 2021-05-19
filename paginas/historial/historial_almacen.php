@@ -16,7 +16,7 @@ if(!isset($_SESSION["login"])){
 	<body class="cabecera">
 	<header class="cabecera" id="myHeader">
 	<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
-			<a href="menu.php" class="w3-bar-item w3-button">Menu</a>
+			<a href="../../menu.php" class="w3-bar-item w3-button">Menu</a>
 			<a href="../prestamos.php" class="w3-bar-item w3-button">Prestamos</a>
 			<a href="../historial/historial.php" class="w3-bar-item w3-button">Historial</a>
 			<a href="../mostrar-datos.php" class="w3-bar-item w3-button">Inventario</a>
@@ -32,14 +32,13 @@ if(!isset($_SESSION["login"])){
 				<h1 class="w3-xxxlarge w3-animate-bottom"><b>HISTORIAL DE</b></h1>
 				<h1 class="w3-xxxlarge w3-animate-bottom"><b>PRESTAMOS</b></h1>
 				<div class="w3-padding-64"/>
-				<a href="paginas/menu-usuario.php"><h1 class="w3-display-topright w3-xlarge w3-card"> Usuario: <?php echo $_SESSION['nombre']; ?></h1></a>
+				<a href="../menu-usuario.php"><h1 class="w3-display-topright w3-xlarge w3-card"> Usuario: <?php echo $_SESSION['nombre']; ?></h1></a>
 			</div>
 		</header>
 		<div class="w3-row-padding  w3-margin-top W3-center w3-centered w3-auto W3-theme-white">
 			<div class="w3-center">
 				<div class=" w3-container contenedor2 " style="min-width:100%">
 					<h1 class="w3-xxxlarge w3-animate-left">Historial de Préstamos</h1>
-					<img class="w3-margin-bottom w3-card w3-circle" src="../../img/logo.png" alt="logo" width="200" height="200"/><br>
 					<a href="./historial.php">Articulos
 					<a href="./historial_almacen.php">Almacen
 					<a href="./historial_cantidad.php">Cantidad
@@ -100,7 +99,6 @@ if(!isset($_SESSION["login"])){
 				</div>
 			</div>
 		</div>
-	</body>
 	<script>
 			function w3_open() {
 				var x = document.getElementById("mySidebar");
@@ -174,4 +172,5 @@ if(!isset($_SESSION["login"])){
 				}
 			}
 		</script>
+		</body>
 </html>

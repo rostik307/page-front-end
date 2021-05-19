@@ -1,4 +1,11 @@
+<?php
+session_start();
+if(!isset($_SESSION["login"])){
+	header("Location: login.html");
+}
+?>
 <html>
+
 	<title>Inventario del almacen</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,18 +15,18 @@
 	<link rel="stylesheet" href="../css/estilo.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<body class="cabecera">
-	
-	
-	
-			
-
-
-	
-	
-	
-	
-	
-	
+	<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
+			<a href="../menu.php" class="w3-bar-item w3-button">Menu</a>
+			<a href="prestamos.php" class="w3-bar-item w3-button">Prestamos</a>
+			<a href="historial/historial.php" class="w3-bar-item w3-button">Historial</a>
+			<a href="mostrar-datos.php" class="w3-bar-item w3-button">Inventario</a>
+			<a href="logout.php" class="w3-bar-item w3-button">Cerrar Sesion</a>
+			<button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
+		</nav>
+		<header class="cabecera" id="myHeader">
+			<i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+			<a href="menu-usuario.php"><h1 class="w3-display-topright w3-xlarge w3-card"> Usuario: <?php echo $_SESSION['nombre']; ?></h1></a>
+		</header>
 		<div class="w3-row-padding  w3-margin-top W3-center w3-auto W3-theme-white">
 			<div class="w3-center">
 				<div class=" w3-container  " style="min-width:100%">

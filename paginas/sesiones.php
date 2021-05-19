@@ -27,9 +27,9 @@ if( $comprobacion ){
       // Ahora $fila tiene la primera fila de la consulta, pongamos que tienes
       // un campo en tu DB llamado NOMBRE, así accederías
 		$_SESSION["nombre"] = $fila['nombre']."<br>";
-		$_SESSION["apellidos"] = $fila['apellidos']."<br>";
-		$_SESSION["telefono"] = $fila['telefono']."<br>";
-		$_SESSION["permisos"] = $fila['permisos']."<br>";			
+		// $_SESSION["apellidos"] = $fila['apellidos']."<br>";
+		// $_SESSION["telefono"] = $fila['telefono']."<br>";
+		// $_SESSION["permisos"] = $fila['permisos']."<br>";			
 		}
 
 	}	
