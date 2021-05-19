@@ -30,7 +30,7 @@ if(!isset($_SESSION["login"])){
 				$('#btn2').on('click', function(){
 					$.ajax({
 						type: "POST",
-						url: "salida.php",
+						url: "nav_prestamos/salida.php",
 						success: function(response) {
 							$('#div-results').html(response);
 						}
@@ -101,13 +101,44 @@ if(!isset($_SESSION["login"])){
 					<h3><b>Objetos Disponibles</b></h3>
 					<br>
 					<b>
-					<a class="btn btn-success" id="btn1">Ver el archivo que contiene hola</a> 
-					<a class="btn btn-danger" id="btn2">Ver el archivo que contiene adios</a>
-					<tr class="w3-bar">
-					
-					<form class="w3-animate-right w3-large "  action="navegadorprestamos.php" method="POST">
-					<input type="button" id="almacen" class="w3-button w3-square w3-black " name="almacen" value="AlmacenAF">
-					</tr>
+		<form method="POST" action="prestamos.php" onSubmit="return validarForm(this)">
+		<input type="text" placeholder="Buscar" id="palabra" name="palabra">
+		<input type="submit" value="Buscar" name="buscar" class="fadeIn fourth w3-card-4" style="background-color:#b0db6b" onclick="w3_open()">
+		</form> 
+		<table border='1' class="w3-card w3-center">
+			<tr>	<th width='30'>Id</th>
+					<th width='120'>Almacen</th>
+					<th width='120'>nombre</th>
+					<th width='30'>cantidad</th>
+					<th width='120'>detalles</th>
+			</tr>
+ <?php
+		if(isset($_POST['palabra'])) {
+					   $buscar = $_POST["palabra"];
+						$conect2 = mysqli_connect("localhost", "root", "", "almacenes");
+ $consulta2= mysqli_query ($conect2,"SELECT articulo.*, almacen.lugar FROM articulo LEFT JOIN almacen ON articulo.idAlmacen = almacen.Idalmacen WHERE articulo.nombre like '%$buscar%' or articulo.detalles like '%$buscar%' or almacen.lugar like '%$buscar%' or articulo.idArticulo = '$buscar'");					
+			while($registro = mysqli_fetch_array($consulta2)) 
+		{
+           ?> 
+		  
+							
+								<tr>	<th width='30'></th>
+										<th width='120'></th>
+										<th width='30'></th>
+										<th width='120'></th>
+								</tr>
+							
+				<td class="estilo-tabla" align="center" width='30'><?=$registro['idArticulo']?></td>
+               <td class="estilo-tabla" align="center" width='150'><?=$registro['lugar']?></td>
+			    <td class="estilo-tabla" align="center" width='30'><?=$registro['nombre']?></td>
+               <td class=”estilo-tabla” align="center" width=' fit-content'><?=$registro['cantidad']?></td>
+			   <td class=”estilo-tabla” align="center" width=' fit-content'><?=$registro['detalles']?></td>
+           
+           <?php 
+       }
+		}
+    ?>
+    </table>
 					</form>
 						<p>
 						

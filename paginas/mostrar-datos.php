@@ -15,7 +15,7 @@ if(!isset($_SESSION["login"])){
 	<link rel="stylesheet" href="../css/estilo.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<body class="cabecera">
-	<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
+	<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none; color:black" id="mySidebar">
 			<a href="../menu.php" class="w3-bar-item w3-button">Menu</a>
 			<a href="prestamos.php" class="w3-bar-item w3-button">Prestamos</a>
 			<a href="historial/historial.php" class="w3-bar-item w3-button">Historial</a>
@@ -27,20 +27,18 @@ if(!isset($_SESSION["login"])){
 			<i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
 			<a href="menu-usuario.php"><h1 class="w3-display-topright w3-xlarge w3-card"> Usuario: <?php echo $_SESSION['nombre']; ?></h1></a>
 		</header>
-		<div class="w3-row-padding  w3-margin-top W3-center w3-auto W3-theme-white">
+		<div class="w3-row-padding  w3-margin-top W3-center w3-auto ">
 			<div class="w3-center">
 				<div class=" w3-container  " style="min-width:100%">
 					<h1 class="w3-xxxlarge w3-animate-left">Inventario</h1>
 					<img class="w3-margin-bottom w3-card w3-circle" src="../img/logo.png" alt="logo" width="200" height="200"/><br>
 					
-					<form method="POST" action="mostrar-datos.php" onSubmit="return validarForm(this)">
+	<form method="POST" action="mostrar-datos.php" onSubmit="return validarForm(this)">
  
-    <input type="text" placeholder="Buscar" id="palabra" name="palabra">
+		<input type="text" placeholder="Buscar" id="palabra" name="palabra">
 		
-    <input type="submit" value="Buscar" name="buscar" class="fadeIn fourth w3-card-4" style="background-color:#b0db6b" onclick="w3_open()">
-		
- 
-</form> 	
+		<input type="submit" value="Buscar" name="buscar" class="fadeIn fourth w3-card-4" style="background-color:#b0db6b" onclick="w3_open()">
+	</form> 	
 <div class="portatablas ">
 
 	
@@ -56,8 +54,8 @@ if(!isset($_SESSION["login"])){
 		if(isset($_POST['palabra'])) {
 					   $buscar = $_POST["palabra"];
 						$conect2 = mysqli_connect("localhost", "root", "", "almacenes");
-					   $consulta2= mysqli_query ($conect2,"SELECT articulo.*, almacen.lugar FROM articulo LEFT JOIN almacen ON articulo.idAlmacen = almacen.Idalmacen WHERE articulo.nombre like '$buscar' or articulo.detalles like '$buscar' or almacen.lugar like '$buscar'");
-					   while($registro = mysqli_fetch_array($consulta2)) 
+ $consulta2= mysqli_query ($conect2,"SELECT articulo.*, almacen.lugar FROM articulo LEFT JOIN almacen ON articulo.idAlmacen = almacen.Idalmacen WHERE articulo.nombre like '%$buscar%' or articulo.detalles like '%$buscar%' or almacen.lugar like '%$buscar%' or articulo.idArticulo = '$buscar'");					
+			while($registro = mysqli_fetch_array($consulta2)) 
 		{
            ?> 
 		  
@@ -79,9 +77,7 @@ if(!isset($_SESSION["login"])){
 		}
     ?>
     </table>
-    <?php
 
-?>
 	
 	
 					
@@ -145,7 +141,7 @@ if(!isset($_SESSION["login"])){
 		<script>
 			function w3_open() {
 				var x = document.getElementById("mySidebar");
-				x.style.width = "100%";
+				x.style.width = "700px";
 				x.style.fontSize = "40px";
 				x.style.paddingTop = "10%";
 				x.style.display = "block";

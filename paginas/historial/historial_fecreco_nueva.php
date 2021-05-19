@@ -15,7 +15,7 @@ if(!isset($_SESSION["login"])){
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<body class="cabecera">
 	<header class="cabecera" id="myHeader">
-	<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
+	<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none; color:black" id="mySidebar">
 			<a href="../../menu.php" class="w3-bar-item w3-button">Menu</a>
 			<a href="../prestamos.php" class="w3-bar-item w3-button">Prestamos</a>
 			<a href="../historial/historial.php" class="w3-bar-item w3-button">Historial</a>
