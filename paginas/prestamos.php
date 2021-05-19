@@ -22,7 +22,7 @@ if(!isset($_SESSION["login"])){
 			<a href="prestamos.php" class="w3-bar-item w3-button">Prestamos</a>
 			<a href="historial/historial.php" class="w3-bar-item w3-button">Historial</a>
 			<a href="mostrar-datos.php" class="w3-bar-item w3-button">Inventario</a> 
-			<a href="paginas/logout.php" class="w3-bar-item w3-button">Cerrar Sesion</a>
+			<a href="logout.php" class="w3-bar-item w3-button">Cerrar Sesion</a>
 			<button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
 		</nav>
 		<header class="cabecera" id="myHeader">
