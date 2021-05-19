@@ -31,7 +31,7 @@ create database almacenes;
 use almacenes;
 
 CREATE TABLE `almacen` (
-  `idAlmacen` int(11) NOT NULL,
+  `idAlmacen` int NOT NULL auto_increment primary key,
   `lugar` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -570,11 +570,6 @@ INSERT INTO `usuarios` (`idUsuario`, `idPerfil`, `nombre`, `apellidos`, `telefon
 -- Índices para tablas volcadas
 --
 
---
--- Indices de la tabla `almacen`
---
-ALTER TABLE `almacen`
-  ADD PRIMARY KEY (`idAlmacen`);
 
 --
 -- Indices de la tabla `articulo`
@@ -652,6 +647,65 @@ ALTER TABLE `reserva`
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `fkUsuarioPerfil` FOREIGN KEY (`idPerfil`) REFERENCES `perfil` (`idPerfil`) ON UPDATE CASCADE;
 COMMIT;
+
+-- IMPORTANTE, ELIMINAR TRAS DEMONSTRACIÓN
+
+INSERT INTO `reserva` (`idReserva`, `idArticulo`, `idUsuario`, `detalles`, `cantidad`,`fecha_recogida`,`fecha_devolucion`) VALUES
+('1','46','Pedro03','','1','2021-06-01','2021-06-02'),
+('2','88','Pedro03','','3','2021-06-02','2021-06-03'),
+('3','64','Pedro03','','1','2021-06-03','2021-06-04'),
+('4','254','Pedro03','','1','2021-06-04','2021-06-05'),
+('5','222','Pedro03','','1','2021-06-05','2021-06-06'),
+('6','100','Pedro03','','1','2021-06-06','2021-06-07'),
+('7','199','Pedro03','','1','2021-06-07','2021-06-08'),
+('8','235','Pedro03','','1','2021-06-08','2021-06-09'),
+('9','1','Pedro03','','1','2021-06-09','2021-06-10'),
+('10','8','Pedro03','','1','2021-06-10','2021-06-11'),
+('11','45','Pedro03','','1','2021-06-11','2021-06-12'),
+('12','333','Pedro03','','1','2021-06-12','2021-06-13'),
+('13','300','Pedro03','','1','2021-06-13','2021-06-14'),
+('14','235','Pedro03','','1','2021-06-14','2021-06-15'),
+('15','151','Pedro03','','1','2021-06-15','2021-06-16'),
+('16','120','Pedro03','','1','2021-06-16','2021-06-17'),
+('17','111','Pedro03','','1','2021-06-17','2021-06-18'),
+('18','125','Pedro03','','1','2021-06-18','2021-06-19'),
+('19','166','Pedro03','','1','2021-06-19','2021-06-20'),
+('20','100','Pedro03','','1','2021-06-20','2021-06-21'),
+('21','77','Pedro03','','1','2021-06-21','2021-06-22'),
+('22','45','Pedro03','','1','2021-06-22','2021-06-23'),
+('23','112','Pedro03','','1','2021-06-23','2021-06-24'),
+('24','242','Pedro03','','1','2021-06-24','2021-06-25'),
+('25','111','Pedro03','','1','2021-06-25','2021-06-26'),
+('26','88','Pedro03','','1','2021-06-26','2021-06-27'),
+('27','9','Pedro03','','1','2021-06-27','2021-06-28'),
+('28','5','Pedro03','','1','2021-06-28','2021-06-29'),
+('29','75','Pedro03','','1','2021-06-29','2021-06-30'),
+('30','41','Pedro03','','1','2021-06-30','2021-07-01'),
+('31','33','Pedro03','','1','2021-07-01','2021-07-02'),
+('32','333','Pedro03','','1','2021-07-02','2021-07-03'),
+('33','321','Pedro03','','1','2021-07-03','2021-07-04'),
+('34','213','Pedro03','','1','2021-07-04','2021-07-05'),
+('35','123','Pedro03','','1','2021-07-05','2021-07-06'),
+('36','311','Pedro03','','1','2021-07-06','2021-07-07'),
+('37','54','Pedro03','','1','2021-07-07','2021-07-08'),
+('38','98','Pedro03','','1','2021-07-08','2021-07-09'),
+('39','46','Pedro03','','1','2021-07-09','2021-07-10'),
+('40','56','Pedro03','','1','2021-07-10','2021-07-11'),
+('41','174','Pedro03','','1','2021-07-11','2021-07-12'),
+('42','94','Pedro03','','1','2021-07-12','2021-07-13');
+
+
+--
+--  DETALLES DE LA TABLA DE RESERVAS
+--
+--  `idReserva` int(11) NOT NULL Primary key auto_increment,
+--  `idArticulo` int(11) NOT NULL,
+--  `idUsuario` varchar(50) NOT NULL,
+--  `detalles` varchar(100),
+--  `cantidad` int(11) NOT NULL,
+--  `fecha_recogida` datetime NOT NULL,
+--  `fecha_devolucion` datetime NOT NULL
+--
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
