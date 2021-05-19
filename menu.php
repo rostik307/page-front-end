@@ -18,11 +18,12 @@ if(!isset($_SESSION["login"])){
     <body>
 
 		<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
-			<a href="menu.html" class="w3-bar-item w3-button">Menu</a>
+			<a href="menu.php" class="w3-bar-item w3-button">Menu</a>
 			<a href="paginas/login.html" class="w3-bar-item w3-button">Login</a>
 			<a href="paginas/prestamos.php" class="w3-bar-item w3-button">Prestamos</a>
-			<a href="paginas/historial.php" class="w3-bar-item w3-button">Historial</a>
-			<a href="paginas/mostrar-datos.php" class="w3-bar-item w3-button">Inventario</a> 
+			<a href="paginas/historial/historial.php" class="w3-bar-item w3-button">Historial</a>
+			<a href="paginas/mostrar-datos.php" class="w3-bar-item w3-button">Inventario</a>
+			<a href="paginas/logout.php" class="w3-bar-item w3-button">Log out</a> 
 			<button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
 		</nav>
 	  
@@ -35,35 +36,10 @@ if(!isset($_SESSION["login"])){
 				<div class="w3-padding-64"/>
 			</div>
 		</header>
-	
-	<div id="id01" class="w3-modal">
-		<div class="w3-modal-content w3-card-4 w3-animate-top">
 		
-			<header class="w3-container w3-theme-l1">
-				<span onclick="document.getElementById('id01').style.display='none'"
-					class="w3-button w3-display-topright">×</span>
-				<h4>Conectarse</h4>
-
-				</h4>
-			</header>	
-			
-		</div>
-	</div>
-	  
-    <div id="id01" class="w3-modal">
-			<div class="w3-modal-content w3-card-4 w3-animate-top">
-			
-				<header class="w3-container w3-theme-l1">
-					<span onclick="document.getElementById('id01').style.display='none'"
-						class="w3-button w3-display-topright">×</span>
-					<h4>Conectarse</h4>
-				</header>	
-				
-			</div>
-		</div>
 	  
 		<div class="w3-row-padding w3-center w3-margin-top">
-	
+
 			<a href="paginas/prestamos.php">
 				<div class="w3-third">
 					<div class="w3-card w3-container" style="min-height:460px">
@@ -80,7 +56,7 @@ if(!isset($_SESSION["login"])){
 				</div>
 			</a>
 			
-			<a href="paginas/historial.php">
+			<a href="paginas/historial/historial.php">
 				<div class="w3-third">
 					<div class="w3-card w3-container" style="min-height:460px">
 						<h3><b>Historial</b></h3>
@@ -115,12 +91,12 @@ if(!isset($_SESSION["login"])){
 			 </a>
 		
 		</div>
-	  
+  
 
 		<script>
 			function w3_open() {
 				var x = document.getElementById("mySidebar");
-				x.style.width = "100%";
+				x.style.width = "700px";
 				x.style.fontSize = "40px";
 				x.style.paddingTop = "10%";
 				x.style.display = "block";
