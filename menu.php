@@ -21,12 +21,8 @@ if(!isset($_SESSION["login"])){
 
 		<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
 			<a href="menu.php" class="w3-bar-item w3-button">Menu</a>
-			<a href="paginas/login.html" class="w3-bar-item w3-button">Login</a>
 			<a href="paginas/prestamos.php" class="w3-bar-item w3-button">Prestamos</a>
 			<a href="paginas/historial/historial.php" class="w3-bar-item w3-button">Historial</a>
-			<a href="paginas/mostrar-datos.php" class="w3-bar-item w3-button">Inventario</a>
-			<a href="paginas/logout.php" class="w3-bar-item w3-button">Log out</a> 
-			<a href="paginas/historial.php" class="w3-bar-item w3-button">Historial</a>
 			<a href="paginas/mostrar-datos.php" class="w3-bar-item w3-button">Inventario</a>
 			<a href="paginas/logout.php" class="w3-bar-item w3-button">Cerrar Sesion</a>
 			<button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
