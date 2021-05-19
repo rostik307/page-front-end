@@ -7,7 +7,7 @@ if(!isset($_SESSION["login"])){
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>ALMACENES ALBERICIA</title>
+		<title>Almacenes Albericia</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="css/temas.css">
@@ -39,7 +39,7 @@ if(!isset($_SESSION["login"])){
 				<h1 class="w3-xxxlarge w3-animate-bottom"><b>IES ALBERICIA</b></h1>
 				<h1 class="w3-xxxlarge w3-animate-bottom"><b>ALMACENES</b></h1>
 				<div class="w3-padding-64"/>
-				<h1 class="fa fa-user w3-display-topright w3-xlarge"> Usuario: <?php echo $_SESSION['nombre']; ?></h1>
+				<a href="paginas/menu-usuario.php"><h1 class="w3-display-topright w3-xlarge w3-card"> Usuario: <?php echo $_SESSION['nombre']; ?></h1></a>
 			</div>
 		</header>
 		
