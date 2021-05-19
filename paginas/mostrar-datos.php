@@ -39,7 +39,8 @@
 	
  
 		 <table border='1' class="w3-card w3-center">
-		 <tr>	<th width='30'>Id</th>
+								<tr>	<th width='30'>Id</th>
+										<th width='120'>Almacen</th>
 										<th width='120'>nombre</th>
 										<th width='30'>cantidad</th>
 										<th width='120'>detalles</th>
@@ -48,7 +49,7 @@
 		if(isset($_POST['palabra'])) {
 					   $buscar = $_POST["palabra"];
 						$conect2 = mysqli_connect("localhost", "root", "", "almacenes");
-					   $consulta2= mysqli_query ($conect2,"SELECT * FROM articulo WHERE nombre like '%$buscar%' or detalles like '%$buscar%'");
+					   $consulta2= mysqli_query ($conect2,"SELECT articulo.*, almacen.lugar FROM articulo LEFT JOIN almacen ON articulo.idAlmacen = almacen.Idalmacen WHERE articulo.nombre like '$buscar' or articulo.detalles like '$buscar' or almacen.lugar like '$buscar'");
 					   while($registro = mysqli_fetch_array($consulta2)) 
 		{
            ?> 
@@ -61,10 +62,10 @@
 								</tr>
 							
 				<td class="estilo-tabla" align="center" width='30'><?=$registro['idArticulo']?></td>
-               <td class="estilo-tabla" align="center" width='150'><?=$registro['nombre']?></td>
-			    <td class="estilo-tabla" align="center" width='30'><?=$registro['cantidad']?></td>
-               <td class=”estilo-tabla” align="center" width=' fit-content'><?=$registro['detalles']?></td>
-			   
+               <td class="estilo-tabla" align="center" width='150'><?=$registro['lugar']?></td>
+			    <td class="estilo-tabla" align="center" width='30'><?=$registro['nombre']?></td>
+               <td class=”estilo-tabla” align="center" width=' fit-content'><?=$registro['cantidad']?></td>
+			   <td class=”estilo-tabla” align="center" width=' fit-content'><?=$registro['detalles']?></td>
            
            <?php 
        }
@@ -86,7 +87,7 @@
 						die("No se pudo crear la conexi&oacute al SGBD");
 					}
 					
-					$consulta = "SELECT * FROM articulo";
+					$consulta = "SELECT articulo.*, almacen.lugar FROM articulo LEFT JOIN almacen ON articulo.idAlmacen = almacen.Idalmacen";
 					$resultado = mysqli_query($conect, $consulta);
 					
 					if (!$resultado) {
@@ -100,6 +101,7 @@
 						<table border='1'>
 							<thead>
 								<tr>	<th width='30'>idArticulo</th>
+										<th width='120'>Almacen</th>
 										<th width='120'>nombre</th>
 										<th width='30'>cantidad</th>
 										<th width='120'>detalles</th>
@@ -111,6 +113,7 @@
 							echo "
 								<tr>
 									<td>$valor[idArticulo]</td>
+									<td>$valor[lugar]</td>
 									<td>$valor[nombre]</td>
 									<td>$valor[cantidad]</td>
 									<td>$valor[detalles]</td> 
