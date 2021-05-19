@@ -7,7 +7,7 @@ $_SESSION["password"] = $_POST['password'];
 
 $user=$_POST["login"];
 $password=$_POST["password"];
-$conn= mysqli_connect("localhost","root","", "almacenes");
+$conn= mysqli_connect("localhost","administrador","administrador", "almacenes");
 if(!$conn){
 	echo "<h3>No se ha podido conectar PHP - MySQL, verifique sus datos.</h3><hr><br>";
 }else{
@@ -27,7 +27,8 @@ if( $comprobacion ){
 
       // Ahora $fila tiene la primera fila de la consulta, pongamos que tienes
       // un campo en tu DB llamado NOMBRE, así accederías
-	  $_SESSION["nombre"] = $fila['nombre']."<br>";
+		$_SESSION["nombre"] = $fila['nombre'];
+	// echo "Contraseña: " .$fila['contrasena']."<br>";
 	header("Location: ../menu.php");
 	}	
   }else{
@@ -44,6 +45,5 @@ if( $comprobacion ){
  // }else { 
 	// echo " si funciona";
  } 
-
  // }
 ?>
