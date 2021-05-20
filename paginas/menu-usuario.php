@@ -38,12 +38,16 @@ if(!isset($_SESSION["login"])){
 		
 		<a>
 			<div class="w3-half">
-				<div class="w3-card w3-container" style="min-height:460px">
-					<h3><b>Datos</b></h3>
+				<div class="w3-card w3-container w3-center" style="min-height:460px">
+					<h1><b class="w3-center">Datos de Usuario</b></h1>
+					<p class="fa fa-user w3-center" style="font-size:100px"></p>
 					<br>
 					<b>
-						<p>
-						Aqui van los datos del usuario
+					
+							<p>Nombre: <?php echo $_SESSION['nombre']; ?></h1></p>
+							<p>Apellidos: <?php echo $_SESSION['apellidos']; ?></h1></p>
+							<p>Telefono: <?php echo $_SESSION['telefono']; ?></h1></p>
+							<p>Tipo: <?php echo $_SESSION['permisos']; ?></h1><p>
 						</p>
 					</b>
 					
@@ -55,7 +59,56 @@ if(!isset($_SESSION["login"])){
 		<a>
 			<div class="w3-half">
 				<div class="w3-card w3-container" style="min-height:460px">
+				<?php
 
+					if (!$conect = mysqli_connect("localhost", "root", "", "almacenes")) {
+						
+						die("No se pudo crear la conexi&oacute al SGBD");
+					}
+					
+					$consulta = "SELECT reserva.IdUsuario articulo.nombre, almacen.lugar, reserva.cantidad, reserva.fecha_recogida, reserva.fecha_devolucion FROM almacenes.almacen JOIN almacenes.articulo JOIN almacenes.reserva WHERE  reserva.idArticulo = articulo.idArticulo and almacen.idAlmacen = articulo.idAlmacen order by nombre";
+					$resultado = mysqli_query($conect, $consulta);
+					
+					if (!$resultado) {
+						
+						echo "<p>Error en la consulta.</p>";
+						
+					} else {
+						
+						echo "<p>Listado completo del historial:</p>\n
+						<table border=\"1\">
+							<thead>
+								<tr>
+									<th width=\"50\">Usuario</th>
+									<th width=\"50\">Nombre</th>
+									<th width=\"50\">Almacen</th>
+									<th width=\"100\">Cantidad</th>
+									<th width=\"100\">Fecha Recogida</th>
+									<th width=\"100\">Fecha Devolucion</th>
+									
+								</tr>
+							</thead>";
+							
+						while ($valor = mysqli_fetch_array($resultado)) {
+							
+							echo "	<tr>\n
+									<td>$valor[idUsuario]</td>
+									<td>$valor[nombre]</td>
+									<td>$valor[lugar]</td>
+									<td>$valor[cantidad]</td>
+									<td>$valor[fecha_recogida]</td>
+									<td>$valor[fecha_devolucion]</td>									
+							</tr>\n";
+						}
+						
+						echo "</table>\n";
+						
+					}
+					
+					mysqli_free_result($resultado);
+					
+					
+					?>
 			</div>
 		</a>
 		<script>

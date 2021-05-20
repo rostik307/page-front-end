@@ -25,7 +25,8 @@ if(!isset($_SESSION["login"])){
 			<a href="paginas/historial/historial.php" class="w3-bar-item w3-button">Historial</a>
 			<a href="paginas/mostrar-datos.php" class="w3-bar-item w3-button">Inventario</a>
 			<a href="paginas/logout.php" class="w3-bar-item w3-button">Cerrar Sesion</a>
-			<button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
+			<a href="paginas/administrador/menu-administrador.php" class="w3-bar-item w3-button">Menu Administrador</a>
+			<button class="w3-bar-item w3-button" onclick="w3_close()">Cerrar <i class="fa fa-remove"></i></button>
 		</nav>
 	  
 		<header class="cabecera" id="myHeader">
