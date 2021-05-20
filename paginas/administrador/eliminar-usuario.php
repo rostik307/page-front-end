@@ -9,10 +9,10 @@ if(!isset($_SESSION["login"])){
 		<title>Eliminar usuario</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="../../css/bootstrap.css">
-		<link rel="stylesheet" href="../../css/temas.css">
-		<link rel="stylesheet" href="../../css/w3.css">
-		<link rel="stylesheet" href="../../css/estilo.css">
+		<link rel="stylesheet" href="../css/temas.css">
+		<link rel="stylesheet" href="../css/bootstrap.css">
+		<link rel="stylesheet" href="../css/w3.css">
+		<link rel="stylesheet" href="../css/estilo.css"> 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 	<body>
@@ -29,7 +29,7 @@ if(!isset($_SESSION["login"])){
 			<i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i>
 			<a href="menu-usuario.php"><h1 class="w3-display-topright w3-xlarge w3-card"> Usuario: <?php echo $_SESSION['nombre']; ?></h1></a>
 			<div class="w3-center">
-				<img src="../../img/logo.png" alt="" width="100" height="100"/>
+				<img src="../img/logo.png" alt="" width="100" height="100"/>
 				<h1 class="w3-xxxlarge w3-animate-bottom"><b>Eliminar Usuario</b></h1>
 				<div class="w3-padding-16"/>
 			</div>

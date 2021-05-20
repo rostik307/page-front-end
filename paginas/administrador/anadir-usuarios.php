@@ -5,29 +5,24 @@ if(!isset($_SESSION["login"])){
 }
 ?>
 <html>
-	<head>
-		<title>Crear nuevo usuario</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="../../css/bootstrap.css">
-		<link rel="stylesheet" href="../../css/temas.css">
-		<link rel="stylesheet" href="../../css/w3.css">
-		<link rel="stylesheet" href="../../css/estilo.css">
-	</head>
-	
+	<title>Crear nuevo usuario</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/temas.css">
+	<link rel="stylesheet" href="../css/w3.css">
+	<link rel="stylesheet" href="../css/estilo.css">
 	<body class="cabecera">
 		<div class="w3-row-padding  w3-margin-top W3-center w3-auto W3-theme-white w3-display-middle  w3-card-4">
 			<div class="w3-center">
 				<div class=" w3-container contenedor1 " style="min-height:460px">
 					<h1 class="w3-xxxlarge w3-animate-left">Crear nuevo usuario</h1><br>
-					<img class="w3-margin-bottom w3-card w3-circle" src="../../img/logo.png" alt="logo" width="200" height="200"/><br>
-					
-					<!--
-					<a href="./anadir-usuarios.php">Crear Usuarios
-					<a href="./anadir-almacenes.php">Crear Almacenes <br>
-					<a href="./eliminar-usuario.php">Eliminar Usuarios
-					<a href="./eliminar-almacen.php">Eliminar Almacenes </a>
-					-->
+					<img class="w3-margin-bottom w3-card w3-circle" src="../img/logo.png" alt="logo" width="200" height="200"/><br>
+					<a href="./crearusuario.php">Crear Usuarios
+					<a href="./crearalmacen.php">Crear Almacenes <br>
+					<a href="./eliminarusuario.php">Eliminar Usuarios
+					<a href="./eliminaralmacen.php">Eliminar Almacenes </a>
+
 
 					<form class="w3-animate-right w3-large "  action="crearusuario.php" method="POST">
 						<label for="articulo">Nombre usuario:</label><br>
