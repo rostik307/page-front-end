@@ -1,0 +1,38 @@
+<html>
+	<title>Registro</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/temas.css">
+	<link rel="stylesheet" href="../css/w3.css">
+	<link rel="stylesheet" href="../css/estilo.css">
+	<body class="cabecera">
+		<div class="w3-row-padding  w3-margin-top W3-center w3-auto W3-theme-white w3-display-middle  w3-card-4">
+			<div class="w3-center">
+				<div class=" w3-container contenedor1 " style="min-height:460px">
+					<h1 class="w3-xxxlarge w3-animate-left">Registrate</h1><br>
+					<img class="w3-margin-bottom w3-card w3-circle" src="../img/logo.png" alt="logo" width="200" height="200"/>
+
+					<form class="w3-animate-right w3-large "  action="comprobacion.php" method="POST">
+						<label for="articulo">Indica tu nombre</label><br>
+						<input type="text" id="articulo" class="fadeIn second " name="nombre" placeholder="Nombre"><br><br>
+						
+						<label for="apellido1">Apellidos</label><br>
+						<input type="text" id="apellido1" class="fadeIn third " name="apellido1" placeholder="Apellido 1">
+						<input type="text" id="apellido2" class="fadeIn third " name="apellido2" placeholder="Apellido 2"><br><br>
+						
+						<label for="telefono">Telefono de contacto</label><br>
+						<input type="tel" id="telefono" class="fadeIn second " name="telefono" placeholder="987-12-34-56" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"><br><br>
+						
+						<label for="direccion1">Dirección de tu centro</label><br>
+						<input type="text" id="direccion1" class="fadeIn second " name="direccion1" placeholder="Santander" value="Santander">
+						<input type="text" id="direccion2" class="fadeIn second " name="direccion2" placeholder="Avda. Ejemplo">
+						<input type="text" id="direccion2" class="fadeIn second " name="direccion2" placeholder="nº1"><br><br>
+
+						<input type="submit" class="fadeIn fourth w3-card-4 " value="Enviar Aviso" style="background-color:#b0db6b">
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
