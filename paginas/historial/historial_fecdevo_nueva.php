@@ -53,7 +53,7 @@ if(!isset($_SESSION["login"])){
 						die("No se pudo crear la conexi&oacute al SGBD");
 					}
 					
-					$consulta = "SELECT articulo.nombre, almacen.lugar, reserva.cantidad, reserva.fecha_recogida, reserva.fecha_devolucion FROM almacenes.almacen JOIN almacenes.articulo JOIN almacenes.reserva WHERE reserva.idArticulo = articulo.idArticulo and almacen.idAlmacen = articulo.idAlmacen order by fecha_devolucion desc";
+					$consulta = "SELECT reserva.idReserva, reserva.idUsuario, articulo.nombre, almacen.lugar, reserva.cantidad, reserva.fecha_recogida, reserva.fecha_devolucion FROM almacenes.almacen JOIN almacenes.articulo JOIN almacenes.reserva WHERE reserva.idArticulo = articulo.idArticulo and almacen.idAlmacen = articulo.idAlmacen order by fecha_devolucion desc";
 					$resultado = mysqli_query($conect, $consulta);
 					
 					if (!$resultado) {
@@ -66,7 +66,8 @@ if(!isset($_SESSION["login"])){
 						<table border=\"1\">
 							<thead>
 								<tr>
-								
+									<th width=\"50\">id</th>
+									<th width=\"50\">Usuario</th>
 									<th width=\"50\">Nombre</th>
 									<th width=\"50\">Almacen</th>
 									<th width=\"100\">Cantidad</th>
@@ -79,6 +80,8 @@ if(!isset($_SESSION["login"])){
 						while ($valor = mysqli_fetch_array($resultado)) {
 							
 							echo "	<tr>\n
+									<td>$valor[idReserva]</td>
+									<td>$valor[idUsuario]</td>
 									<td>$valor[nombre]</td>
 									<td>$valor[lugar]</td>
 									<td>$valor[cantidad]</td>

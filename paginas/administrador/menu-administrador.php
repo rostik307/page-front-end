@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION["login"])){
-	header("Location: paginas/login.html");
+	header("Location: ../login.html");
 }
 ?>
 <!DOCTYPE html>
@@ -44,7 +44,7 @@ if(!isset($_SESSION["login"])){
 		</header>	  
 		<div class="w3-row-padding w3-center w3-margin-top">
 
-			<a href="anadir-almacenes.php">
+			<a href="crearalmacen.php">
 				<div class="w3-third">
 					<div class="w3-card w3-container" style="min-height:18vh">
 						<h3><b>Añadir Almacenes</b></h3>
@@ -54,7 +54,7 @@ if(!isset($_SESSION["login"])){
 				</div>
 			</a>
 			
-			<a href="anadir-usuarios.php">
+			<a href="crearusuario.php">
 				<div class="w3-third">
 					<div class="w3-card w3-container" style="min-height:18vh">
 						<h3><b>Añadir Usuarios</b></h3>
@@ -64,7 +64,7 @@ if(!isset($_SESSION["login"])){
 				</div>
 			</a>
 			
-			<a href="anadir-prestamos.php">
+			<a href="../prestamos.php">
 				<div class="w3-third">
 					<div class="w3-card w3-container" style="min-height:18vh">
 						<h3><b>Añadir préstamos</b></h3>
@@ -74,7 +74,7 @@ if(!isset($_SESSION["login"])){
 				</div>
 			</a>
 			
-			<a href="eliminar-almacenes.php">
+			<a href="eliminaralmacen.php">
 				<div class="w3-third">
 					<div class="w3-card w3-container" style="min-height:18vh">
 						<h3><b>Eliminar Almacenes</b></h3>
@@ -84,7 +84,7 @@ if(!isset($_SESSION["login"])){
 				</div>
 			</a>
 			
-			<a href="eliminar-usuarios.php">
+			<a href="eliminarusuario.php">
 				<div class="w3-third">
 					<div class="w3-card w3-container" style="min-height:18vh">
 						<h3><b>Eliminar Usuarios</b></h3>
@@ -94,7 +94,7 @@ if(!isset($_SESSION["login"])){
 				</div>
 			</a>
 			
-			<a href="eliminar-prestamos.php">
+			<a href="eliminarprestamos.php">
 				<div class="w3-third">
 					<div class="w3-card w3-container" style="min-height:18vh">
 						<h3><b>Eliminar préstamos</b></h3>
@@ -104,7 +104,7 @@ if(!isset($_SESSION["login"])){
 				</div>
 			</a>
 			
-			<a href="editar-almacenes.php">
+			<a href="editaralmacenes.php">
 				<div class="w3-third">
 					<div class="w3-card w3-container" style="min-height:18vh">
 						<h3><b>Editar Almacenes</b></h3>
@@ -114,7 +114,7 @@ if(!isset($_SESSION["login"])){
 				</div>
 			</a>
 			
-			<a href="editar-usuarios.php">
+			<a href="editarusuarios.php">
 				<div class="w3-third">
 					<div class="w3-card w3-container" style="min-height:18vh">
 						<h3><b>Editar Usuarios</b></h3>
@@ -124,7 +124,7 @@ if(!isset($_SESSION["login"])){
 				</div>
 			</a>
 			
-			<a href="editar-prestamos.php">
+			<a href="editarprestamos.php">
 				<div class="w3-third">
 					<div class="w3-card w3-container" style="min-height:18vh">
 						<h3><b>Editar préstamos</b></h3>

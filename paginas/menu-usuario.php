@@ -3,6 +3,7 @@ session_start();
 if(!isset($_SESSION["login"])){
 	header("Location: login.html");
 }
+$user=$_SESSION["login"];
 ?>
 <html>
 	<head>
@@ -24,6 +25,8 @@ if(!isset($_SESSION["login"])){
 			<a href="prestamos.php" class="w3-bar-item w3-button">Prestamos</a>
 			<a href="historial/historial.php" class="w3-bar-item w3-button">Historial</a>
 			<a href="mostrar-datos.php" class="w3-bar-item w3-button">Inventario</a> 
+			<a href="logout.php" class="w3-bar-item w3-button">Cerrar Sesion</a>
+			<a href="administrador/menu-administrador.php" class="w3-bar-item w3-button">Menu Administrador</a>
 			<button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
 		</nav>
 		<header class="cabecera" id="myHeader">
@@ -66,7 +69,7 @@ if(!isset($_SESSION["login"])){
 						die("No se pudo crear la conexi&oacute al SGBD");
 					}
 					
-					$consulta = "SELECT reserva.IdUsuario articulo.nombre, almacen.lugar, reserva.cantidad, reserva.fecha_recogida, reserva.fecha_devolucion FROM almacenes.almacen JOIN almacenes.articulo JOIN almacenes.reserva WHERE  reserva.idArticulo = articulo.idArticulo and almacen.idAlmacen = articulo.idAlmacen order by nombre";
+					$consulta = "SELECT reserva.idReserva, reserva.idUsuario,articulo.nombre, almacen.lugar, reserva.cantidad, reserva.fecha_recogida, reserva.fecha_devolucion FROM almacenes.almacen JOIN almacenes.articulo JOIN almacenes.reserva WHERE  reserva.idArticulo = articulo.idArticulo and almacen.idAlmacen = articulo.idAlmacen and reserva.idUsuario = '$user' order by nombre";
 					$resultado = mysqli_query($conect, $consulta);
 					
 					if (!$resultado) {
@@ -75,10 +78,11 @@ if(!isset($_SESSION["login"])){
 						
 					} else {
 						
-						echo "<p>Listado completo del historial:</p>\n
+						echo "<h1>Listado del historial del Usuario:</h1>\n
 						<table border=\"1\">
 							<thead>
 								<tr>
+									<th width=\"50\">id</th>
 									<th width=\"50\">Usuario</th>
 									<th width=\"50\">Nombre</th>
 									<th width=\"50\">Almacen</th>
@@ -92,6 +96,7 @@ if(!isset($_SESSION["login"])){
 						while ($valor = mysqli_fetch_array($resultado)) {
 							
 							echo "	<tr>\n
+									<td>$valor[idReserva]</td>
 									<td>$valor[idUsuario]</td>
 									<td>$valor[nombre]</td>
 									<td>$valor[lugar]</td>

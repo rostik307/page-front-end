@@ -22,12 +22,13 @@ if(!isset($_SESSION["login"])){
 			<a href="prestamos.php" class="w3-bar-item w3-button">Prestamos</a>
 			<a href="historial/historial.php" class="w3-bar-item w3-button">Historial</a>
 			<a href="mostrar-datos.php" class="w3-bar-item w3-button">Inventario</a> 
+			<a href="administrador/menu-administrador.php" class="w3-bar-item w3-button">Menu Administrador</a>
 			<a href="logout.php" class="w3-bar-item w3-button">Cerrar Sesion</a>
 			<button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
 		</nav>
 		<header class="cabecera" id="myHeader">
 			<i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i>
-			<a href="paginas/menu-usuario.php"><h1 class="w3-display-topright w3-xlarge w3-card"> Usuario: <?php echo $_SESSION['nombre']; ?></h1></a>
+			<a href="menu-usuario.php"><h1 class="w3-display-topright w3-xlarge w3-card"> Usuario: <?php echo $_SESSION["login"] ?></h1></a>
 			<div class="w3-center">
 				<img src="../img/logo.png" alt="" width="100" height="100"/>
 				<h1 class="w3-xxxlarge w3-animate-bottom"><b>Avisar por un</b></h1>

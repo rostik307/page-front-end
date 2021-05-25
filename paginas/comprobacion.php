@@ -5,6 +5,7 @@ $_SESSION["login"] = $_POST['login'];
 $_SESSION["password"] = $_POST['password']; 
 
 
+
 $user=$_POST["login"];
 $password=$_POST["password"];
 $conn= mysqli_connect("localhost","root","", "almacenes");
@@ -30,7 +31,8 @@ if( $comprobacion ){
 	  $_SESSION["nombre"] = $fila['nombre']."<br>";
 	  $_SESSION["apellidos"] = $fila['apellidos']."<br>";
 	  $_SESSION["telefono"] = $fila['telefono']."<br>";
-	  $_SESSION["idPerfil"] = $fila['idPerfil`']."<br>";		
+	  $_SESSION["idPerfil"] = $fila['idPerfil']."<br>";	
+	  $_SESSION["idUsuario"] = $fila['idUsuario`']."<br>";		  
 	header("Location: ../menu.php");
 	}	
   }else{
